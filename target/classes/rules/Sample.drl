@@ -1,0 +1,25 @@
+package com.sample
+ 
+import com.sample.DroolsTest.Message;
+
+global String myname
+rule "GoodBye"
+    when
+        Message( status == Message.GOODBYE, myMessage : message )
+    then
+        System.out.println( myMessage+ " from "+ getDefaultIfNull(myname) );
+end 
+rule "Hello World"
+    when
+        m : Message( status == Message.HELLO, myMessage : message )
+    then
+        System.out.println( myMessage );
+        m.setMessage( "Goodbye cruel world" );
+        m.setStatus( Message.GOODBYE );
+        update( m );
+end
+function String getDefaultIfNull(String topicLevel) {
+return topicLevel == null ? "Unknown" : topicLevel;
+}
+
+

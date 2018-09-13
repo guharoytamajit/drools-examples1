@@ -1,0 +1,9 @@
+Customer will add one or more products to the cart. There are certain rules that we want to fire as we process the cart. Rules are:
+
+• If a product needs registration, customer need to register else the item will not be processed.
+• There will be discounts applied to the cart total price. If the customer has just registered to the site, there will be a 2% discount
+on the first purchase.
+• If the customer has a coupon, another 5% discount will be applied on the total price. The coupon code and the percentage
+amounts may vary.
+• If customer’s requested quantity of product exceeds the available stock, then it will be registered as an issue.
+• If a product turns out-of-stock, an error will be registered.
